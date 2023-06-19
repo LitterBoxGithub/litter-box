@@ -1,24 +1,3 @@
-# FROM mcr.microsoft.com/dotnet/aspnet:6.0 AS base
-# WORKDIR /app
-# EXPOSE 80
-# EXPOSE 443
-
-# FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
-# WORKDIR /src
-# COPY ["LitterBox.Api/LitterBox.Api.csproj", "LitterBox.Api/"]
-# RUN dotnet restore "LitterBox.Api/LitterBox.Api.csproj"
-# COPY . .
-# WORKDIR "/src/LitterBox.Api"
-# RUN dotnet build "LitterBox.Api.csproj" -c Release -o /app/build
-
-# FROM build AS publish
-# RUN dotnet publish "LitterBox.Api.csproj" -c Release -o /app/publish
-
-# FROM base AS final
-# WORKDIR /src
-# COPY --from=publish /src/publish .
-# ENTRYPOINT ["dotnet", "LitterBox.Api.dll"]
-
 # Base image
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 
@@ -44,12 +23,10 @@ WORKDIR /src
 # Copy the published output of the ASP.NET backend
 COPY --from=build /src/publish .
 
-ENV ASPNETCORE_URLS "http://10.0.0.0:5000"
+ENV ASPNETCORE_URLS "http://host.docker.internal:5000"
 ENV ASPNETCORE_ENVIRONMENT "Development"
 
-# Expose port 5001 for HTTPS
-EXPOSE 80:80
-EXPOSE 443:443
+# Expose ports for http and https
 EXPOSE 5000:5000
 EXPOSE 5001:5001
 
