@@ -2,7 +2,7 @@ version: '3'
 services:
   frontend:
     build:
-      context: ./frontend/litter-box-web
+      context: ../frontend/litter-box-web
       dockerfile: Dockerfile
     ports:
       - 3000:3000
@@ -10,7 +10,7 @@ services:
       - backend
   backend:
     build:
-      context: ./backend/LitterBox.Api/LitterBox.Api
+      context: ../backend/LitterBox.Api/LitterBox.Api
       dockerfile: Dockerfile
     ports:
       - 5000:5000

@@ -10,6 +10,7 @@ import {
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import CancelIcon from '@mui/icons-material/Cancel';
 import { motion } from 'framer-motion';
+import SwipeableCard from '../components/SwipeableCard';
 
 interface MatchingContainerProps {
   image?: string;
@@ -54,35 +55,7 @@ const MatchingContainer: React.FC<MatchingContainerProps> = ({
     <Stack sx={{ 
       overflowX: 'hidden',
     }}>
-      <motion.div
-        drag="x"
-        dragConstraints={{ left: 0, right: 0 }}
-        onDragEnd={(event, info) => {
-          if (info.offset.x > 100) {
-            handleSwipeRight();
-          } else if (info.offset.x < -100) {
-            handleSwipeLeft();
-          }
-        }}
-        variants={variants}
-        initial="active"
-        animate="active"
-        exit="active"
-      >
-        <Card variant='outlined'>
-          <CardContent>
-            <CardMedia component="img" image="https://product-images.tcgplayer.com/fit-in/437x437/226586.jpg" />
-            <CardActions sx={{justifyContent: 'space-between'}}>
-              <IconButton>
-                <CancelIcon fontSize='large' />
-              </IconButton>
-              <IconButton sx={{ float: 'right' }}>
-                <FavoriteIcon fontSize='large' />
-              </IconButton>
-            </CardActions>
-          </CardContent>
-        </Card>
-      </motion.div>
+      <SwipeableCard title={"stuff"} description={"stuff"} />
     </Stack>
   );
 }
