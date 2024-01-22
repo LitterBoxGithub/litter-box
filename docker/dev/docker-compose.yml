@@ -1,0 +1,38 @@
+version: '3'
+services:
+  litter-box-frontend:
+    container_name: litter-box-db
+    tty: true
+    build:
+      context: ../../frontend/litter-box-web
+      dockerfile: Dockerfile
+    ports:
+      - 7900:7900
+    environment:
+      - PORT=7900
+      - LITTER_BOX_API_BASE_URL=http://litter-box-api.kawaiivee.xyz
+    depends_on:
+      - litter-box-backend
+  litter-box-backend:
+    tty: true
+    container_name: litter-box-db
+    build:
+      context: ../../backend/LitterBox/LitterBox.Api
+      dockerfile: Dockerfile
+    ports:
+      - 7902:7902
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Docker
+    depends_on:
+      - litter-box-db
+  litter-box-db:
+    container_name: litter-box-db
+    image: postgres:latest
+    ports:
+      - 7904:5432
+    volumes:
+      - ./postgres-data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_DB: litter_box
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: kittycatmeow

@@ -3,7 +3,7 @@ import { Box, Card } from '@mui/material';
 
 const ChatsContainer = () => {
   return (
-    <Box>
+    <Box sx={{ overflowY: 'visible'}}>
       <button>MyButton</button>
       <Card 
         style={{ width: '80%', height: '80%' }}

@@ -1,8 +1,9 @@
-import { Box, Card } from '@mui/material';
+import { Box, Card,} from '@mui/material';
 
 const SettingsContainer = () => {
+  const dev = true;
   return (
-        <Box>
+    <Box>
       <Card
         style={{ width: '80%', height: '80%' }}
         variant='outlined'

@@ -1,5 +1,3 @@
-import { Guid } from 'guid-typescript';
-
 import {
   PetSpecies,
   PetMassSize,
@@ -7,7 +5,7 @@ import {
 } from './enums';
 
 export type User = {
-  id: Guid | string,
+  id: string,
   email: string,
   firstName: string,
   lastName: string,
@@ -15,31 +13,31 @@ export type User = {
 }
 
 export type Pet = {
-  id: Guid | string,
-  userId: Guid | string,
+  id: string,
+  userId: string,
   name: string,
   city: string,
   petSpecies?: PetSpecies,
   petMassSize?: PetMassSize,
-  petVoumeSize?: PetVolumeSize,
+  petVolumeSize?: PetVolumeSize,
 }
 
 export type Match = {
-  userId1: Guid | string,
-  userId2?: Guid | string,
-  petId1: Guid | string,
-  petId2?: Guid | string,
+  userId1: string,
+  userId2?: string,
+  petId1: string,
+  petId2?: string,
 }
 
 export type Message = {
-  matchId: Guid | string,
-  authorId: Guid | string,
+  matchId: string,
+  authorId: string,
   messageContent: string,
 }
 
 export type Photo = {
-  userId: Guid | string,
-  petId: Guid | string,
+  userId: string,
+  petId: string,
   photoKey: string,
 }
 
