@@ -141,6 +141,9 @@ const mockData = {
       petSpecies: PetSpecies.BIRD,
       petMassSize: PetMassSize.CHOMNK,
       petVolumeSize: PetVolumeSize.GIRAFFENECK,
+    },
+    {
+      beep: 'boop'
     }
   ]
 };
