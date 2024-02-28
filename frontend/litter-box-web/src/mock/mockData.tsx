@@ -143,7 +143,13 @@ const mockData = {
       petVolumeSize: PetVolumeSize.GIRAFFENECK,
     },
     {
-      beep: 'boop'
+      id: '53h8d3dd-354c-4ea5-8e82-f4f92d5463e7',
+      userId: '7c4c6a9c-4b0b-4a56-b53c-9d4005205b46',
+      name: 'beep',
+      city: 'testCity13Name',
+      petSpecies: PetSpecies.CAT,
+      petMassSize: PetMassSize.OHLAWD,
+      petVolumeSize: PetVolumeSize.MIDDO,
     }
   ]
 };

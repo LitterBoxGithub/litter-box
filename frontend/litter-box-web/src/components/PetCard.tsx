@@ -13,6 +13,7 @@ const PetCard = ({ pet, petName }: PetCardProps) => {
       {petName}
       <li key={pet.id}>
         <h3>{pet.name}</h3>
+        <p> hello pets!!</p>
         <p>Species: {pet.petSpecies}</p>
         <p>Mass Size: {pet.petMassSize}</p>
         <p>Volume Size: {pet.petVolumeSize}</p>
